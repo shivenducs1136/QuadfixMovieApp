@@ -43,31 +43,31 @@ class ActionAdapter(private val context: Context): RecyclerView.Adapter<ActionAd
         if(collect.show.image != null){ Glide.with(holder.itemView).load(collect.show.image.original).into(holder.moiveimage) }
         holder.itemView.setOnClickListener {
             val bundle = Bundle()
-            if(!collect.show.name.isNullOrEmpty()){ bundle.putString("title", collect.show.name) }
+            if(collect.show.name!=null){ bundle.putString("title", collect.show.name) }
             else{
                 bundle.putString("title", "null")
             }
-            if(!collect.show.summary.isNullOrEmpty()){ bundle.putString("summary", collect.show.summary) }
+            if(collect.show.summary!=null){ bundle.putString("summary", collect.show.summary) }
             else{
                 bundle.putString("summary", "null")
             }
-            if(!collect.show.image.original.isNullOrEmpty()){ bundle.putString("image", collect.show.image.original) }
+            if(collect.show.image!=null){ bundle.putString("image", collect.show.image.original) }
             else{
                 bundle.putString("image","null")
             }
-            if(!collect.show.url.isNullOrEmpty()){ bundle.putString("url", collect.show.url) }
+            if(collect.show.url!=null){ bundle.putString("url", collect.show.url) }
             else{
                 bundle.putString("url", "null")
             }
-            if(!collect.score.toString().isNullOrEmpty()){ bundle.putDouble("score", collect.score) }
+            if(collect.score!=null){ bundle.putDouble("score", collect.score) }
             else{
                 bundle.putDouble("score", 0.0)
             }
-            if(!collect.show.language.isNullOrEmpty()){ bundle.putString("language", collect.show.language) }
+            if(collect.show.language!=null){ bundle.putString("language", collect.show.language) }
             else{
                 bundle.putString("language","null")
             }
-            if(!collect.show.network.name.isNullOrEmpty()){ bundle.putString("networkname", collect.show.network.name) }
+            if( collect.show.network!=null && collect.show.network.name!=null ){ bundle.putString("networkname", collect.show.network.name) }
             else {
                 bundle.putString("networkname","null")
             }

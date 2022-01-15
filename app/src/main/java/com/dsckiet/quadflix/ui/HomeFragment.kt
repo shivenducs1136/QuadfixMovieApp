@@ -61,7 +61,6 @@ class HomeFragment : Fragment() {
          viewModel5 = ViewModelProvider(this,viewModelFactory).get(MainViewModel5::class.java)
                 viewModel5.getMovie("Thriller")
                 viewModel5.myResponse.observe(viewLifecycleOwner, Observer {
-                    Log.d("BOLTy","success"+it.toString())
                         feedAdapter5.setStateWiseTracker(it)
                     binding.progressBar.visibility = View.GONE
                 })
@@ -90,7 +89,6 @@ class HomeFragment : Fragment() {
          viewModel3 = ViewModelProvider(this,viewModelFactory).get(MainViewModel3::class.java)
         viewModel3.getMovie("Comedy")
         viewModel3.myResponse.observe(viewLifecycleOwner, Observer {
-            Log.d("BOLTy","success"+it.toString())
                 feedAdapter3.setStateWiseTracker(it)
         })
         binding.comedyRecview.layoutManager = LinearLayoutManager(requireContext(), RecyclerView.HORIZONTAL, false)
